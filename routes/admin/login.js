@@ -5,8 +5,17 @@ var usuariosModel = require('./../../models/usuariosModel');
 router.get('/', function (req, res, next) {
     res.render('admin/login', {
         layout: 'admin/layout',
+        persona: 'req.session.nombre',
     });
 });
+
+router.get('/logout, function (req, res, next) {
+    req.session.destroy();
+    res.render('admin/login', {
+        layout: 'admin/layout'
+    });
+});
+
 
 router.post('/', async (req, res, next ) => {
     try {
@@ -32,12 +41,6 @@ router.post('/', async (req, res, next ) => {
     }
 });
 
-router.get('/logout, function (req, res, next) {
-    req.session.destroy();
-    res.render('admin/login', {
-        layout: 'admin/layout'
-    });
-});
 
 
 module.exports = router;
