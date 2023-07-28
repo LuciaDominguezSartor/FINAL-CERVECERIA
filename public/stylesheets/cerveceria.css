@@ -54,11 +54,14 @@ footer {
 }
 
 .testimonio {
-    background-color: #dadada;
+    background: url(../images/beer3.jpg) no-repeat;
+    opacity: 1;
     padding-bottom: 4rem !important; 
 }
 .testimonio {
     text-align: center;
+    font-weight: 800;
+    color: white;
     padding: 50px 20px;
 }
 .staff {
