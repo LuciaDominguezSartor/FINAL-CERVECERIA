@@ -12,11 +12,11 @@ router.get('/', async function (req, res, next) {
     });
 });
 
-router.get('eliminar/:id', async (req, res, next) => {
-    const id = req.params.id;
+router.get('/eliminar/:id', async (req, res, next) => {
+    var id = req.params.id;
 
     await novedadesModel.deleteNovedadesById(id);
-    res.redirect('admin/novedades')
+    res.redirect('/admin/novedades')
 });
 
 router.get('/', function (req, res, next) {
