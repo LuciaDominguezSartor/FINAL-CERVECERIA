@@ -19,6 +19,12 @@ router.get('/eliminar/:id', async (req, res, next) => {
     res.redirect('/admin/novedades')
 });
 
+router.get('/agregar', (req, res, next) => {
+    res.render('admin/agregar', {
+        layout: 'admin/layout'
+    });
+});
+
 router.get('/', function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',

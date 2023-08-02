@@ -14,7 +14,7 @@
         <h2>Novedades</h2>
         <ul class="lista-novedades">
             {{#each novedades}}
-            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="exampleModal{{id}}">
+            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}">
                     <img src="images/novedades01.jpg">{{titulo}}</a>
             </li>
             {{/each}}
@@ -33,7 +33,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h4> {{subtitulo}} </h4>                    
+                    <h5> {{subtitulo}} </h5>                    
                    <p>{{cuerpo}}</p>
                 </div>
             </div>
