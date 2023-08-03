@@ -15,12 +15,12 @@ router.get('/', async function (req, res, next) {
 router.get('/eliminar/:id', async (req, res, next) => {
     var id = req.params.id;
 
-    await novedadesModel.deleteNovedadesById(id);
+    await novedadesModel.deleteNovedadById(id);
     res.redirect('/admin/novedades')
 });
 
-router.get('/agregar', (req, res, next) => {
-    res.render('admin/agregar', {
+router.get('/eliminar', (req, res, next) => {
+    res.render('admin/eliminar', {
         layout: 'admin/layout'
     });
 });
@@ -53,8 +53,8 @@ router.post('/agregar', async (req, res, next) => {
 });
 
 router.get('/modificar/:id', async (req, res, next) => {
-    let id = req.params.id;
-    let novedad = await novedadesModel.getNovedadesById(id);
+    var id = req.params.id;
+    var novedad = await novedadesModel.getNovedadesById(id);
     res.render('admin/modificar', {
         layout: 'admin/layout',
         novedad
@@ -63,7 +63,7 @@ router.get('/modificar/:id', async (req, res, next) => {
 
 router.post('/modificar', async (req, res, next) => {
     try {
-        let obj = {
+        var obj = {
             titulo: req.body.titulo,
             subtitulo: req.body.subtitulo,
             cuerpo: req.body.cuerpo
