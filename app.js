@@ -41,7 +41,7 @@ secured = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
