@@ -25,8 +25,8 @@ router.get('/eliminar', (req, res, next) => {
     });
 });
 
-router.get('/', function (req, res, next) {
-    res.render('admin/novedades', {
+router.get('/agregar', function (req, res, next) {
+    res.render('admin/agregar', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
     });
@@ -36,7 +36,7 @@ router.post('/agregar', async (req, res, next) => {
     try {
         if (req.body.titulo != "" && req.body.subtitulo != "" && req.body.cuerpo != "") {
             await novedadesModel.insertNovedad(req.body);
-            res.redirect('admin/novedades')
+            res.redirect('/admin/novedades')
         } else {
             res.render('admin/agregar', {
                 layout: 'admin/layout',
