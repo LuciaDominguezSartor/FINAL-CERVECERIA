@@ -23,7 +23,7 @@ router.get('/', async function(req, res, next) {
     } else {
         return {
             ...novedad,
-            imagen: '/images/noimage.jpg'
+            imagen: './images/noimage.jpg'
         }
     }
 });
